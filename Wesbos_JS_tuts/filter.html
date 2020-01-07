@@ -40,6 +40,17 @@ function findFruitByProp(prop,propThatWeAreLookingFor) {
 const fruit1 = fruits.find(findFruitByProp('name','bananas'));
 console.log("fruit1",fruit1);
 
+//3 Check if its off
+function isOdd(element, index, array) 
+{  
+   return (element % 2 == 1);  
+} 
+  
+const array = [ 4, 5, 8, 11 ]; 
+
+const oddy = array.find(isOdd); 
+console.log("oddy",oddy);
+
     
 </script>
 </body>
