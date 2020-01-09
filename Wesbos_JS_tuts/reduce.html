@@ -14,7 +14,14 @@
   0
 )
 console.log("total",total);
-    
+
+//2 flattening of arrays
+
+let flattened = [[0, 1], [2, 3], [4, 5]].reduce(
+  ( accumulator, currentValue ) => accumulator.concat(currentValue),
+  []
+)
+console.log("flattened",flattened);    
 </script>
 </body>
 
