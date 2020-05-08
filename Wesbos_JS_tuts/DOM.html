@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .round{
+            border-radius:50%;
+        }
+    </style>
+<body>
+
+<h2>DOM</h2>
+
+<div>
+    <h4>1</h4>
+    <P id='hi'>Hello DOM</P>
+
+    <img src="https://picsum.photos/600" class="nice open">
+</div>
+
+<script>
+    const ele = document.getElementById('hi');
+    console.log('p',ele);
+    const p1 = document.querySelector('.nice');
+    console.log('3',p1);
+    p1.classList.toggle('round');
+    console.log('2',p1);
+
+
+    const myDiv = document.createElement('div');
+    myDiv.classList.add('myDiv');
+    
+    const p = document.createElement('p');
+    p.textContent = 'Hello Div';
+    myDiv.appendChild(p);
+    document.body.appendChild(myDiv);
+
+    const ul = document.createElement('ul');
+    const li3 = document.createElement('li');
+    document.body.appendChild(ul);
+    // li.textContent = 'two';
+    // ul.appendChild(li);
+    li3.textContent = 'three';
+    ul.appendChild(li3);
+    document.body.insertAdjacentElement('afterbegin', ul);
+
+    const li1 = li3.cloneNode(true);
+    li1.textContent = 'one';
+    ul.insertAdjacentElement('afterbegin', li1);
+
+    const li2 = li3.cloneNode(true);
+    li2.textContent = 'two';
+    li3.insertAdjacentElement('beforebegin', li2);
+
+    const li4 = li3.cloneNode(true);
+    li4.textContent = 'four';
+    li3.insertAdjacentElement('afterend', li4);
+
+    const li5 = li3.cloneNode(true);
+    li5.textContent = 'five';
+    li4.insertAdjacentElement('afterend', li5);
+
+
+</script>
+
+</body>
+</html>
