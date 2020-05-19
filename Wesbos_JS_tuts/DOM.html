@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
     <style>
-        .round{
-            border-radius:50%;
+        .daysgrid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            /* grid-template-rows: repeat(7,100px); */
+        }
+        .days {
+            background-color:#e5e5e5;
+            padding:10px;
+            text-transform: capitalize;
+        }
+        .eventgrid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        .events {
+            border: 1px solid #000;
         }
     </style>
 <body>
@@ -10,54 +24,111 @@
 <h2>DOM</h2>
 
 <div>
-    <h4>1</h4>
+    <!-- <h4>1</h4>
     <P id='hi'>Hello DOM</P>
 
-    <img src="https://picsum.photos/600" class="nice open">
+    <img src="https://picsum.photos/600" class="nice open"> -->
 </div>
 
 <script>
-    const ele = document.getElementById('hi');
-    console.log('p',ele);
-    const p1 = document.querySelector('.nice');
-    console.log('3',p1);
-    p1.classList.toggle('round');
-    console.log('2',p1);
+    // const ele = document.getElementById('hi');
+    // console.log('p',ele);
+    // const p1 = document.querySelector('.nice');
+    // console.log('3',p1);
+    // p1.classList.toggle('round');
+    // console.log('2',p1);
 
-
-    const myDiv = document.createElement('div');
-    myDiv.classList.add('myDiv');
+    //Creating HTML Element example
+    // const myDiv = document.createElement('div');
+    // myDiv.classList.add('myDiv');
+    // document.body.appendChild(myDiv);
     
-    const p = document.createElement('p');
-    p.textContent = 'Hello Div';
-    myDiv.appendChild(p);
-    document.body.appendChild(myDiv);
+    // const p = document.createElement('p');
+    // p.textContent = 'Hello Div';
+    // myDiv.appendChild(p);
+    // document.body.appendChild(myDiv);
 
-    const ul = document.createElement('ul');
-    const li3 = document.createElement('li');
-    document.body.appendChild(ul);
+    //Creating ul and li example
+    // const ul = document.createElement('ul');
+    // const li3 = document.createElement('li');
+    // document.body.appendChild(ul);
     // li.textContent = 'two';
     // ul.appendChild(li);
-    li3.textContent = 'three';
-    ul.appendChild(li3);
-    document.body.insertAdjacentElement('afterbegin', ul);
+    // li3.textContent = 'three';
+    // ul.appendChild(li3);
+    // document.body.insertAdjacentElement('afterbegin', ul);
 
-    const li1 = li3.cloneNode(true);
-    li1.textContent = 'one';
-    ul.insertAdjacentElement('afterbegin', li1);
+    // const li1 = li3.cloneNode(true);
+    // li1.textContent = 'one';
+    // ul.insertAdjacentElement('afterbegin', li1);
 
-    const li2 = li3.cloneNode(true);
-    li2.textContent = 'two';
-    li3.insertAdjacentElement('beforebegin', li2);
+    // const li2 = li3.cloneNode(true);
+    // li2.textContent = 'two';
+    // li3.insertAdjacentElement('beforebegin', li2);
 
-    const li4 = li3.cloneNode(true);
-    li4.textContent = 'four';
-    li3.insertAdjacentElement('afterend', li4);
+    // const li4 = li3.cloneNode(true);
+    // li4.textContent = 'four';
+    // li3.insertAdjacentElement('afterend', li4);
 
-    const li5 = li3.cloneNode(true);
-    li5.textContent = 'five';
-    li4.insertAdjacentElement('afterend', li5);
+    // const li5 = li3.cloneNode(true);
+    // li5.textContent = 'five';
+    // li4.insertAdjacentElement('afterend', li5);
 
+    //Calender grid
+    function generateCalender(day) {
+        const html = `
+            <div class='days'>
+                ${day}
+            </div>
+        `;
+        return html;
+    }
+
+    function generateEventGrid(text) {
+        const html = `
+            <div class='events'>
+                ${text}
+            </div>
+        `;
+        return html;
+    }
+    
+
+    const calenderGrid = document.createElement('div');
+    calenderGrid.classList.add('daysgrid');
+    document.body.appendChild(calenderGrid);
+
+    let dayHTML = generateCalender('monday');
+
+    dayHTML += generateCalender('tuesday');
+
+    dayHTML += generateCalender('wednesday');
+
+    dayHTML += generateCalender('thursday');
+
+    dayHTML += generateCalender('friday');
+
+    dayHTML += generateCalender('saturday');
+
+    dayHTML += generateCalender('sunday');
+
+    calenderGrid.innerHTML = dayHTML;
+
+    const rowGrid = document.createElement('div');
+    rowGrid.classList.add('eventgrid');
+
+    let eventHTML = generateEventGrid('work');
+    eventHTML += generateEventGrid('work');
+    eventHTML += generateEventGrid('work');
+    eventHTML += generateEventGrid('work');
+    eventHTML += generateEventGrid('work');
+    eventHTML += generateEventGrid('work');
+    eventHTML += generateEventGrid('work');
+    rowGrid.innerHTML = eventHTML;
+
+    calenderGrid.insertAdjacentElement('afterend', rowGrid);
+    // console.log('calenderGrid',calenderGrid);
+    
 
 </script>
 
