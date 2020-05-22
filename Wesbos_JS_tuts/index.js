@@ -108,3 +108,11 @@
 // };
 // var x = threeSum([1,2,3,4]);
 // console.log(x);
+function sum(n) {
+    if(n<=1){
+        return n;
+    } else {
+        return sum(n-1) + sum(n-2);
+    }
+}
+sum(100);
