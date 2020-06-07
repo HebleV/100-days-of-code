@@ -4,7 +4,13 @@ function mergeArrays(keys, values) {
         finalObj[keys[index]] = value;
         return finalObj;
     }, {})
-    console.log(finalObj);
 }
 
 mergeArrays(['username', 'first-name', 'last-name', 'age'],['johndoe', 'John', 'Doe', 35]);
+//output 
+// {
+//     username: 'johndoe',
+//     'first-name': 'John',
+//     'last-name': 'Doe',
+//     age: 35
+//   }
