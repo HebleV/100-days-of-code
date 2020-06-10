@@ -12,6 +12,10 @@ var removeDuplicates = function(array){
     
 }
 
+// second method using set
+// const uniqueset = new Set(array);
+// const uniquearray = [...uniqueset];
+
 // console.log(removeDuplicates([1,5,5,2,3,4,4]));
 
 removeDuplicates([1,5,5,2,3,4,4]);
