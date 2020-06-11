@@ -1,4 +1,4 @@
-var removeDuplicates = function(array){
+let removeDuplicates = function(array){
     let uniqueArray = [];
         
         // Loop through array values
