@@ -4,7 +4,7 @@ function Largest(arr) {
     });
 
     let newArr = arr.filter(item => item != firstHighest);
-    
+
     let secondHighest = newArr.reduce(function(a,b) {
         return Math.max(a,b);
     });
@@ -12,4 +12,4 @@ function Largest(arr) {
     
 }
 
-Largest([1,3,5,7,9,11]);
+Largest([10,1,100])
