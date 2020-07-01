@@ -1,25 +1,28 @@
-<!DOCTYPE html>
-<html>
-<body>
 
-<h2>JavaScript Closures</h2>
-
-<script>
 //   const outer = function(a,b) {
 //       return (a + b);
 //   }
-// console.log(outer(2,3));
+// console.log(outer(2,3)); -->
 
-function outer(a) {
-     function inner(b) {
-        return (a+b);
+// function outer(a) {
+//      function inner(b) {
+//         return (a+b);
+//     }
+//     return inner;
+// }
+// const sum = outer(1);
+// const sum1 = outer(2);
+// console.log(sum(5));
+// console.log(sum1(2));
+
+function print(a){
+    return function sum(a){
+        return a + 2;
     }
-    return inner;
 }
-const sum = outer(1);
-const sum1 = outer(2);
-console.log(sum(5));
-console.log(sum1(2));
+var x = print(2);
+console.log(x);
+console.log(x(4));
 
 /* 
 1- https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-closure-b2f0d2152b36
@@ -35,7 +38,3 @@ React Hooks uses closures.
 Any time you would need function that had state or “memory” that could be updated you would need to use a closure.
 If you wanted to create a function that could only be executed once for example, you would use a closure. You can track the executions as a outer variable and stop the function from running after a certain amount of executions.
 */
-</script>
-
-</body>
-</html>
