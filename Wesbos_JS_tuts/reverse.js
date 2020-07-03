@@ -9,7 +9,7 @@
 
 
 function reverse(str) {
-    let reversed = str.split('').reverse().join('');
+    let reversed = [...str].reverse().join('');
     return reversed.split(' ').reverse().join(' ');
 }
 
@@ -21,5 +21,12 @@ function reverse(str) {
 //          return val + acc;
 //     },'');
 // }
-let x = reverse('hello');
+
 console.log(reverse('hello world guys'));
+
+const x = 'hello';
+const y = 'world';
+let z = {
+    [`${x}whats`]: y
+}
+console.log(z)
