@@ -16,6 +16,7 @@
 
 
 // Print fizz at index if it is divisible by 3 and buzz if divisible by 5 and fizzbuzz if divisible by 15
+
 function fizzbuzz(){
     for(let i =1; i < 100; i++) {
       if( i % 15 === 0) {
