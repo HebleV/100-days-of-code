@@ -11,6 +11,7 @@
 //         }  
 //     }
 // }
+//If you change condition to row<=col then output is reverse
 
 
 function steps(n) {
