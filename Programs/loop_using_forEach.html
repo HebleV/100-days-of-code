@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Loop</title>
+</head>
+
+<body>
+<script>
+    const toppings = ['Mushrooms ', 'Tomatoes', 'Eggs', 'Chili', 'Lettuce', 'Avocado', 'Chiles', 'Bacon', 'Pickles', 'Onions', 'Cheese'];
+    const copy1 = [];
+
+    //-----1 before 
+    for(let i = 0; i < toppings.length; i++){
+        copy1.push(toppings[i]);
+    }
+    console.log("copy1",copy1);
+
+    //after
+    const copy2 = [];
+    toppings.forEach(element => {
+        copy2.push(element);
+    });
+    console.log("copy2",copy2);
+
+    //------2 Using index 
+    const copy3 = [];
+    function printElements(element, index, array) {
+        console.log('copy3[' + index + '] = ' + element)
+    }
+
+// Notice that index 2 is skipped, since there is no item at
+// that position in the array...
+[2, 5, , 9].forEach(printElements)
+console.log("copy3",copy3);
+</script>
+</body>
+
+</html>
