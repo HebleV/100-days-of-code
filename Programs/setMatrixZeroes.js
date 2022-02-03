@@ -11,6 +11,7 @@ let setZeroes = function(matrix) {
     for(let row = 0; row < matrix.length; row++) {
         for(let col = 0; col < matrix[0].length; col++) {
             if(matrix[row][col] === 0) {
+                console.log("ss",[row,col])
                 zeroesAddress.push([row,col]);
             }
         }
@@ -22,5 +23,5 @@ let setZeroes = function(matrix) {
     }
 }
 
-let x = setZeroes([[1,1,1],[1,0,1],[1,1,1]])
+let x = setZeroes([[1,1,1],[1,0,1],[0,1,1]])
 console.log({x});
