@@ -26,17 +26,43 @@
 //     return objStr;
 // }
 
-function anagrams(strA,strB) {
-    return helperFunc(strA) === helperFunc(strB);
+// function anagrams(strA,strB) {
+//     return helperFunc(strA) === helperFunc(strB);
+// }
+
+// function helperFunc(str) {
+//     let convertedStr = str.replace(/[^\w]/g, '')
+//                           .toLowerCase()
+//                           .split('')
+//                           .sort()
+//                           .join('');
+//     return convertedStr;
+// }
+// console.log(helperFunc('helloaa'));
+// console.log(anagrams('rail safety','fairy tales'));
+
+function isAnagram(str1, str2) {
+  let objStr1 = {};
+  let objStr2 = {};
+
+  for (let char of str1) {
+		objStr1[char] = objStr1[char] + 1 || 1;
+		console.log("char:",objStr1[char])
+  }
+  for (let char of str2) {
+    objStr2[char] = objStr2[char] + 1 || 1;
+  }
+
+  if (Object.keys(objStr1).length !== Object.keys(objStr2).length) {
+    return false;
+  }
+  for (let char in objStr1) {
+    if (objStr1[char] !== objStr2[char]) {
+      return false;
+    }
+  }
+  return true;
 }
 
-function helperFunc(str) {
-    let convertedStr = str.replace(/[^\w]/g, '')
-                          .toLowerCase()
-                          .split('')
-                          .sort()
-                          .join('');
-    return convertedStr;
-}
-console.log(helperFunc('helloaa'));
-console.log(anagrams('rail safety','fairy tales'));
+console.log(isAnagram("hello", "ollehh"))
+// console.log(isAnagram("rail sam", "sail rams"));

@@ -1,3 +1,7 @@
+//Find the address of 0 in matrix[row][col]
+//Then push the above row,col into new arr
+//Write a helper function to make every item of above row and col to 0 and call this helper function on the row,col of new arr
+
 const changeToZeroes = (row, col, matrix) => {
     for(let i = 0; i<matrix.length; i++) {
          matrix[row][i] = 0;
