@@ -24,24 +24,24 @@
 
 
 // O(nlog(n)) && O(1) for space
-const twoSum = (arr, target) => {
-    arr.sort = (a,b) => a - b;
+const twoSum = (array, targetSum) => {
+    if(array.length < 2 || array.length === 0) return [];
+    let sortedArr = array.sort((a,b) => a - b);
     let left = 0;
-    let right = arr.length - 1;
+    let right = sortedArr.length - 1;
     while(left < right) {
-        currentSum = arr[left] + arr[right];
-        if(currentSum === target) {
-            return [arr[left], arr[right]];
-        } else if(currentSum < target) {
+        let currentSum = sortedArr[left] + sortedArr[right];
+        if(currentSum === targetSum){
+            return [sortedArr[left],sortedArr[right]];
+        } else if(currentSum < targetSum){
             left++;
-        } else if(currentSum > target) {
+        } else if(currentSum > targetSum){
             right--;
-        } else {
-            return [];
-        }
-    }
+        } 
+            
+    } return []
 }
 
-console.log(twoSum([-4,-1,1,3,5,6,8,11],13))
+console.log(twoSum([-21, 301, 12, 4, 65, 56, 210, 356, 9, -47], 310))
 
 
