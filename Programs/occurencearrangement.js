@@ -1,22 +1,20 @@
 function occurence(arr) {
    let sortedArr = arr.sort(function(a,b) { return a-b; });
    let max = {};  
+   let newArr = [];
     for (let char of sortedArr) {
         max[char] = max[char] + 1 || 1;
-        // console.log(max[char]);   
     }
 
     for (let char in max) {
-        let newArr = [];
-        let i = 0;
         for(let i=0;i<max[char];i++) {
             newArr.push(char);
         }
-        console.log(newArr.length);
     }
+    return newArr;
 }
 
-occurence([4,3,1,6,4,3,6,4]);
+console.log(occurence([4,3,1,6,4,3,6,4]));
 
 
 
