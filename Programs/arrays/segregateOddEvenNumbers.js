@@ -15,7 +15,7 @@
 //   return arr;
 // }
 
-// Follow this method if we need to maintain the order
+// Follow this method if we need to maintain the order using Lomuto technique
 function segregateOddEvenNumbers(arr) {
   let i = -1;
   let j = 0;
