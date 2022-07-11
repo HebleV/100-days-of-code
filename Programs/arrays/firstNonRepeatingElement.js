@@ -12,4 +12,4 @@ function firstNonRepeatingElement(arr) {
   return -1;
 }
 
-console.log(firstNonRepeatingElement([9, 4, 9, 6, 7, 4]));
+console.log(firstNonRepeatingElement([9, 9, 6, 7, 4]));
