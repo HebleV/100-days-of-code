@@ -1,0 +1,186 @@
+// let p = new Promise((resolve, reject)=>{
+//     const citrus = ['orange', 'lemon'];
+//     if(citrus.includes('banana')) {
+//         resolve('This is a citrus fruit');
+//     } else {
+//         reject('This is not a citrus fruit');
+//     }
+// })
+// p.then((message)=>{
+//     console.log('Yeah, ' + message);
+// }).catch((error)=>{
+//     console.log('Nah, ' + error);
+// })
+
+// let p1 = new Promise((resolve, reject) => {
+//     return resolve('done with p1');
+// })
+
+// let p2 = new Promise((resolve,reject)=>{
+//     return resolve('done with p2');
+// })
+
+// let p3 = new Promise((resolve,reject) => {
+//     return resolve('done with p3');
+// })
+
+// let p4 = Promise.all([p1, p2, p3]);
+// console.log(p4);
+
+//   for (var i = 0; i < 3; i++) {
+//     const log = () => {
+//       console.log(i);
+//     }
+//     setTimeout(log, 100);
+//   }
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Promises</title>
+</head>
+
+<body>
+  <div id="output"></div>
+  <div id="spinner"></div>
+</body>
+<script> 
+
+// Variables, data, API
+const getFilmsTitles = (films) => films.map(film => `${film.title}\n`)
+const API_URL = "https://starwars.egghead.training/"
+const outputId = document.getElementById("output")
+const spinner = document.getElementById("spinner")
+outputId.innerText = "Loading..."
+const response = fetch(API_URL + "films");
+const response1 = fetch(API_URL + "planets");
+
+
+//@@@ Note: You can use Promise.resolve() method to convert any non standard promise
+//@@@ (thenable structure for ex: $.getJson from jquery) to a native promise so you could use all promise methods.
+
+//############################### Example1 
+// Regular fetch example
+// response.then(result => result.json()).then(films => {
+//   outputId.innerText = getFilmsTitles(films);
+// })
+
+
+//################################ Example 2
+// Adding error handling using catch
+// response.then((data) => {
+
+  //To handle if data.json() is unsuccessful and it doesn't call success handler or getFilmsTitles()
+//   if(!data.ok){
+  //We are exclusively rejecting promise as it provides the stack trace which can be helpful in debugging
+      // return Promise.reject(
+//     throw Error("Unsuccessful response")
+      // )
+//   }
+//   return data.json().then((films) => {
+//     outputId.innerText = getFilmsTitles(films)
+//     }
+//   )
+// }).catch((error) => {
+//       console.warn(error)
+//       outputId.innerText = "Sorry, No Data!!!"
+//     })
+
+
+
+//################################ Example 3
+//Adding finally method which runs everytime eventually, after all .then calls/.catch calls
+//It comes useful when you want to remove some images,loaders or free up some resources after successful or unsuccessful calls
+
+// response.then(data => {
+//   if(!data.ok) {
+//     throw Error("Unsuccessful response")
+//   }
+//   return data.json().then(films => {
+//     outputId.innerText = getFilmsTitles(films)
+//   })
+// }).catch(error => {
+//   console.warn(error)
+//   outputId.innerText= "No data"
+// }).finally(() => {
+ // // Just for depiction as there is no spinner gif being added here
+//   spinner.remove();
+// })
+
+
+
+//################################ Example 4
+//Creating Promise Constructor
+
+// function check(n) {
+//   let p = new Promise((resolve, reject) => {
+//     if (n % 2 === 0) {
+//       return resolve("Even");
+//     } else {
+//       return reject("Odd");
+//     }
+//   });
+//   p.then(() => {
+//     console.log("Even");
+//   }).catch(() => {
+//     console.log("Odd");
+//   });
+// }
+
+// console.log(check(3));
+
+
+
+//################################ Example 5
+// Promise.all() example
+// let p1 = response.then(data => {
+//   return data.json().then(films => console.log("films"))
+// })
+
+// let p2 = response1.then(data => {
+//   return data.json().then(planet => console.log("planet"))
+// })
+
+// let p3 = Promise.all([p1,p2])
+// console.log(p3)
+
+function queryAPI(endpoint){
+  return fetch(API_URL + endpoint).then(response => response.json())
+}
+
+queryAPI("films").then(films => {
+  outputId.innerText = `${films.length} films`
+})
+
+queryAPI("planets").then(planets => {
+  outputId.innerText = `${planets.length} planets`
+})
+
+const promise = Promise.all([
+queryAPI("films"),
+queryAPI("planets")
+])
+
+const da = promise.then(data => {
+  console.log(data[0],data[1])
+})
+
+// Difference between Promise.race and Promise.any is that As soon as a promise is fulfilled 
+// that is either resolved or rejected, promise is settled in Promise.race
+//But whereas in Promise.any if a promise is resolved then that is returned 
+//else if its an error then it keeps checking for other promises to resolve.
+//But finally if all promises are rejected then it is fulfilled with an aggregate error.
+</script>
+</body>
+
+</html>
