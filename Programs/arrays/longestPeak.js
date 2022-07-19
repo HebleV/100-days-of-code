@@ -24,6 +24,3 @@ function longestPeak(array) {
     return longestPeakLength;
   }
   
-  // Do not edit the line below.
-  exports.longestPeak = longestPeak;
-  
