@@ -154,26 +154,26 @@ const response1 = fetch(API_URL + "planets");
 // let p3 = Promise.all([p1,p2])
 // console.log(p3)
 
-function queryAPI(endpoint){
-  return fetch(API_URL + endpoint).then(response => response.json())
-}
+// function queryAPI(endpoint){
+//   return fetch(API_URL + endpoint).then(response => response.json())
+// }
 
-queryAPI("films").then(films => {
-  outputId.innerText = `${films.length} films`
-})
+// queryAPI("films").then(films => {
+//   outputId.innerText = `${films.length} films`
+// })
 
-queryAPI("planets").then(planets => {
-  outputId.innerText = `${planets.length} planets`
-})
+// queryAPI("planets").then(planets => {
+//   outputId.innerText = `${planets.length} planets`
+// })
 
-const promise = Promise.all([
-queryAPI("films"),
-queryAPI("planets")
-])
+// const promise = Promise.all([
+// queryAPI("films"),
+// queryAPI("planets")
+// ])
 
-const da = promise.then(data => {
-  console.log(data[0],data[1])
-})
+// const da = promise.then(data => {
+//   console.log(data[0],data[1])
+// })
 
 // Difference between Promise.race and Promise.any is that As soon as a promise is fulfilled 
 // that is either resolved or rejected, promise is settled in Promise.race
