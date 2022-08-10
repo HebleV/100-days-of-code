@@ -90,10 +90,6 @@ let count = withCount(add);
 // fetchGithubUsers((data) => console.log(data)); //cb arg
 // fetchGithubAvatar((data) => console.log(data)); //cb arg
 
-// console.log(fetchFilms)
-// console.log(fetchPlanets)
-
-
 
 //Example 5 - Composition
 const convertUpperCase = (str) => str.toUpperCase();
