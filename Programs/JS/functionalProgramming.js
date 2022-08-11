@@ -92,10 +92,10 @@ let count = withCount(add);
 
 
 //Example 5 - Composition
-const convertUpperCase = (str) => str.toUpperCase();
-const repeat = (str) => `${str} ${str}`;
+// const convertUpperCase = (str) => str.toUpperCase();
+// const repeat = (str) => `${str} ${str}`;
 
-const compose = (...fn) => (str) => fn.reduceRight((acc,fn) => fn(acc),str);
+// const compose = (...fn) => (str) => fn.reduceRight((acc,fn) => fn(acc),str);
 
-const changeStr = compose(convertUpperCase,repeat)
-console.log(changeStr('Hello World'))
+// const changeStr = compose(convertUpperCase,repeat)
+// console.log(changeStr('Hello World'))
