@@ -18,19 +18,35 @@
 //     return count + 1;
 // }
 
-function countOfPrimes(A) {
+// function countOfPrimes(A) {
+//   let count = 0;
+//   if (A <= 1) return 0;
+//   for (let i = 2; i <= A; i++) {
+//     let flag = 0;
+//     for (let j = 2; j <= parseInt(Math.sqrt(i)); j++) {
+//       if (i % j == 0) {
+//         flag = 1;
+//         break;
+//       }
+//     }
+//     if (flag == 0) count++;
+//   }
+//   return count;
+// }
+
+function countOfPrimes(n){
   let count = 0;
-  if (A <= 1) return 0;
-  for (let i = 2; i <= A; i++) {
+  for(let i = 2; i<=n;i++){
     let flag = 0;
-    for (let j = 2; j <= parseInt(Math.sqrt(i)); j++) {
-      if (i % j == 0) {
+    for(let j = 2; j*j<=i;j++){
+      if(i % j == 0){
+        console.log("i,j",i,j)
         flag = 1;
         break;
       }
-    }
-    if (flag == 0) count++;
-  }
+    } 
+    if(flag == 0) count++;
+  } 
   return count;
 }
 
