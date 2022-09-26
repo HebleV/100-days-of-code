@@ -43,7 +43,7 @@
 
 function findArm(A) {
   const arr = [];
-  for (let i = 1; i < A; i++) {
+  for (let i = 1; i <= A; i++) {
     let temp = i;
     let result = 0;
     let lastNum;
