@@ -1,3 +1,4 @@
+//Given N array elements count number of elements having atleast I element greater than itself
 // function countOfLowestNum(arr){
 //     let max = 0;
 //     let maxCount = 0;
