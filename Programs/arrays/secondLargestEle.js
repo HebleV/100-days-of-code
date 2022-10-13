@@ -31,14 +31,14 @@
 
 function secondLargestEle(A) {
   let maxEle = A[0];
-  let secondMaxEle = 0;
+  let secondMaxEle = -1;
   for (let i = 1; i < A.length; i++) {
     console.log("i, maxEle, secondMaxEle", i, maxEle, secondMaxEle);
     if (A[i] > maxEle) {
       secondMaxEle = maxEle;
       maxEle = A[i];
-    } else if (A[i] < max && A[i] > secondMax) {
-      secondMax = A[i];
+    } else if (A[i] != maxEle && A[i] > secondMaxEle) {
+      secondMaxEle = A[i];
     }
   }
   return secondMaxEle;
