@@ -6,7 +6,7 @@ function specialIndex(arr) {
   const pf_odd = [];
   pf_even[0] = arr[0];
 
-  // for odd first value should be zero => Very imp
+  // for odd, first value should be zero as odd starts from 1 => Very imp
   pf_odd[0] = 0;
 
   for (let i = 1; i < arr.length; i++) {
