@@ -6,7 +6,6 @@ function equilibriumIndex(arr) {
   for (let i = 1; i < arr.length; i++) {
     prefixSum[i] = prefixSum[i - 1] + arr[i];
   }
-
   for(let j = 0; j < arr.length; j++){
     leftSum = j == 0 ? 0 : prefixSum[j-1];
     rightSum = prefixSum[arr.length - 1] - prefixSum[j];
