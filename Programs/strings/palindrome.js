@@ -11,12 +11,26 @@
 //     })
 // }
 
-function palindrome(str) {
-    let rev = '';
-    for (let char of str) {
-         rev = char + rev;
+// function palindrome(str) {
+//     let rev = '';
+//     for (let char of str) {
+//          rev = char + rev;
+//     }
+//     return rev === str;
+// }
+
+function palindrome(str){
+    let left = 0;
+    let right = str.length-1;;
+    while(left<=right){
+        if(str.charAt(left) == str.charAt(right)){
+            left++;
+            right--;
+        } else {
+            return false;
+        }
     }
-    return rev === str;
+    return true;
 }
-var x = palindrome('abbal');
-console.log(x);
+
+console.log(palindrome('nitin'));
