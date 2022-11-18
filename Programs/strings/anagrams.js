@@ -64,5 +64,5 @@ function isAnagram(str1, str2) {
   return true;
 }
 
-console.log(isAnagram("hello", "ollehh"))
+console.log(isAnagram("hello", "olleh"));
 // console.log(isAnagram("rail sam", "sail rams"));
