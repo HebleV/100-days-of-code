@@ -1,3 +1,4 @@
+//Using count sort algorithm
 //O(N) && SC(N)
 function sortString(str){
     const frequencyArr = new Array(26).fill(0);
